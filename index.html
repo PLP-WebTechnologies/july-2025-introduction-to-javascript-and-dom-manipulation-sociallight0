@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals - Personal Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <h1>💰 Personal Finance Tracker</h1>
+            <p>Master JavaScript Fundamentals Through Interactive Finance Management</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Part 1: JavaScript Basics Section -->
+            <section class="section basics-section">
+                <h2>🎯 Part 1: JavaScript Basics</h2>
+                <p class="section-description">
+                    Demonstrating variables, data types, operators, and conditionals
+                </p>
+                
+                <div class="basics-demo">
+                    <div class="demo-card">
+                        <h3>User Profile Setup</h3>
+                        <div class="input-group">
+                            <label for="userName">Your Name:</label>
+                            <input type="text" id="userName" placeholder="Enter your name">
+                        </div>
+                        <div class="input-group">
+                            <label for="userAge">Your Age:</label>
+                            <input type="number" id="userAge" placeholder="Enter your age" min="1" max="120">
+                        </div>
+                        <div class="input-group">
+                            <label for="monthlyIncome">Monthly Income ($):</label>
+                            <input type="number" id="monthlyIncome" placeholder="Enter monthly income" min="0">
+                        </div>
+                        <button onclick="processUserInfo()" class="btn btn-primary">Process Info</button>
+                        <div id="userInfoResult" class="result-display"></div>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <h3>Budget Category Analyzer</h3>
+                        <div class="input-group">
+                            <label for="expenseAmount">Expense Amount ($):</label>
+                            <input type="number" id="expenseAmount" placeholder="Enter expense amount" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="budgetLimit">Budget Limit ($):</label>
+                            <input type="number" id="budgetLimit" placeholder="Enter budget limit" min="0">
+                        </div>
+                        <button onclick="analyzeBudget()" class="btn btn-secondary">Analyze Budget</button>
+                        <div id="budgetAnalysisResult" class="result-display"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part 2: Functions Section -->
+            <section class="section functions-section">
+                <h2>❤️ Part 2: JavaScript Functions</h2>
+                <p class="section-description">
+                    Reusable functions for financial calculations and data processing
+                </p>
+                
+                <div class="functions-demo">
+                    <div class="demo-card">
+                        <h3>Savings Goal Calculator</h3>
+                        <div class="input-group">
+                            <label for="savingsGoal">Savings Goal ($):</label>
+                            <input type="number" id="savingsGoal" placeholder="Enter target amount" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="monthlySavings">Monthly Savings ($):</label>
+                            <input type="number" id="monthlySavings" placeholder="Enter monthly savings" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="currentSavings">Current Savings ($):</label>
+                            <input type="number" id="currentSavings" placeholder="Enter current amount" min="0">
+                        </div>
+                        <button onclick="calculateSavingsTime()" class="btn btn-success">Calculate Time</button>
+                        <div id="savingsResult" class="result-display"></div>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <h3>Currency Converter</h3>
+                        <div class="input-group">
+                            <label for="amountToConvert">Amount (USD):</label>
+                            <input type="number" id="amountToConvert" placeholder="Enter USD amount" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="targetCurrency">Target Currency:</label>
+                            <select id="targetCurrency">
+                                <option value="EUR">Euro (EUR)</option>
+                                <option value="GBP">British Pound (GBP)</option>
+                                <option value="JPY">Japanese Yen (JPY)</option>
+                                <option value="CAD">Canadian Dollar (CAD)</option>
+                            </select>
+                        </div>
+                        <button onclick="convertCurrency()" class="btn btn-info">Convert</button>
+                        <div id="conversionResult" class="result-display"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part 3: Loops Section -->
+            <section class="section loops-section">
+                <h2>🔁 Part 3: JavaScript Loops</h2>
+                <p class="section-description">
+                    Using loops for repetitive tasks and data processing
+                </p>
+                
+                <div class="loops-demo">
+                    <div class="demo-card">
+                        <h3>Monthly Expense Tracker</h3>
+                        <div class="expense-input">
+                            <div class="input-group">
+                                <label for="expenseName">Expense Name:</label>
+                                <input type="text" id="expenseName" placeholder="e.g., Groceries">
+                            </div>
+                            <div class="input-group">
+                                <label for="expenseValue">Amount ($):</label>
+                                <input type="number" id="expenseValue" placeholder="Enter amount" min="0">
+                            </div>
+                            <button onclick="addExpense()" class="btn btn-warning">Add Expense</button>
+                            <button onclick="clearExpenses()" class="btn btn-danger">Clear All</button>
+                        </div>
+                        <div id="expensesList" class="expenses-list"></div>
+                        <div id="expensesSummary" class="summary-display"></div>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <h3>Investment Growth Simulator</h3>
+                        <div class="input-group">
+                            <label for="initialInvestment">Initial Investment ($):</label>
+                            <input type="number" id="initialInvestment" placeholder="Enter initial amount" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="annualReturn">Annual Return (%):</label>
+                            <input type="number" id="annualReturn" placeholder="Enter return rate" min="0" max="100" step="0.1">
+                        </div>
+                        <div class="input-group">
+                            <label for="investmentYears">Investment Period (Years):</label>
+                            <input type="number" id="investmentYears" placeholder="Enter years" min="1" max="50">
+                        </div>
+                        <button onclick="simulateInvestment()" class="btn btn-success">Simulate Growth</button>
+                        <div id="investmentResults" class="investment-results"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part 4: DOM Manipulation Section -->
+            <section class="section dom-section">
+                <h2>🌐 Part 4: DOM Manipulation</h2>
+                <p class="section-description">
+                    Interactive elements that respond to user actions and update dynamically
+                </p>
+                
+                <div class="dom-demo">
+                    <div class="demo-card">
+                        <h3>Interactive Budget Dashboard</h3>
+                        <div class="dashboard-controls">
+                            <button onclick="toggleDashboard()" class="btn btn-primary" id="dashboardToggle">
+                                Show Dashboard
+                            </button>
+                            <button onclick="changeTheme()" class="btn btn-secondary" id="themeToggle">
+                                Switch to Dark Theme
+                            </button>
+                            <button onclick="generateRandomTip()" class="btn btn-info">
+                                Get Financial Tip
+                            </button>
+                        </div>
+                        
+                        <div id="budgetDashboard" class="dashboard hidden">
+                            <h4>📊 Budget Overview</h4>
+                            <div class="dashboard-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Income:</span>
+                                    <span id="totalIncome" class="stat-value">$0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Expenses:</span>
+                                    <span id="totalExpenses" class="stat-value">$0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Remaining Budget:</span>
+                                    <span id="remainingBudget" class="stat-value">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="financialTip" class="tip-display"></div>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <h3>Dynamic Content Creator</h3>
+                        <div class="content-controls">
+                            <div class="input-group">
+                                <label for="goalTitle">Financial Goal:</label>
+                                <input type="text" id="goalTitle" placeholder="Enter your goal">
+                            </div>
+                            <div class="input-group">
+                                <label for="goalAmount">Target Amount ($):</label>
+                                <input type="number" id="goalAmount" placeholder="Enter target amount" min="0">
+                            </div>
+                            <button onclick="addGoal()" class="btn btn-success">Add Goal</button>
+                            <button onclick="clearGoals()" class="btn btn-danger">Clear Goals</button>
+                        </div>
+                        <div id="goalsList" class="goals-container"></div>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <h3>Live Calculator</h3>
+                        <div class="calculator">
+                            <input type="number" id="calcInput1" placeholder="First number" class="calc-input">
+                            <select id="calcOperation" class="calc-operation">
+                                <option value="+">Addition (+)</option>
+                                <option value="-">Subtraction (-)</option>
+                                <option value="*">Multiplication (×)</option>
+                                <option value="/">Division (÷)</option>
+                                <option value="%">Percentage (%)</option>
+                            </select>
+                            <input type="number" id="calcInput2" placeholder="Second number" class="calc-input">
+                            <div id="calcResult" class="calc-result">Result: 0</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Debug Console -->
+            <section class="section debug-section">
+                <h2>🐛 Console Output</h2>
+                <p class="section-description">
+                    JavaScript console messages displayed here (check browser console for more details)
+                </p>
+                <div id="consoleOutput" class="console-output">
+                    <p>Console messages will appear here...</p>
+                </div>
+                <button onclick="clearConsole()" class="btn btn-secondary">Clear Console</button>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 JavaScript Fundamentals Demo - All concepts demonstrated with practical examples</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
